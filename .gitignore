@@ -15,3 +15,5 @@ dist/
 # Ignore local appsettings files with secrets
 backend/Tcrm.Api/appsettings.Development.json
 backend/Tcrm.Api/appsettings.*.Local.json
+# Ignore compiled binaries
+backend/Tcrm.Api/bin/

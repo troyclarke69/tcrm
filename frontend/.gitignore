@@ -1,0 +1,14 @@
+gbin/
+obj/
+.vs/
+.vscode/
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+*.user
+*.suo
+*.db
+*.sqlite
+backend/Tcrm.Api/appsettings.Development.json
+frontend/.env
