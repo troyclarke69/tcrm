@@ -1,0 +1,16 @@
+# flyctl launch added from .gitignore
+**/gbin
+**/obj
+**/.vs
+**/.vscode
+**/node_modules
+**/dist
+**/*.tsbuildinfo
+**/.DS_Store
+**/*.user
+**/*.suo
+**/*.db
+**/*.sqlite
+**/appsettings.Development.json
+**/frontend/.env
+fly.toml

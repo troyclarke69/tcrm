@@ -68,9 +68,12 @@ builder.Services.AddCors(options =>
                     return false;
                 }
 
-                return uri.Scheme == Uri.UriSchemeHttp
-                    && (uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase)
-                        || uri.Host.Equals("127.0.0.1"));
+                return (uri.Scheme == Uri.UriSchemeHttp &&
+                        (uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase) ||
+                         uri.Host.Equals("127.0.0.1"))) ||
+                       (uri.Scheme == Uri.UriSchemeHttps &&
+                        (uri.Host.Equals("tcrm.netlify.app", StringComparison.OrdinalIgnoreCase) ||
+                         uri.Host.EndsWith(".netlify.app", StringComparison.OrdinalIgnoreCase)));
             });
     });
 });
