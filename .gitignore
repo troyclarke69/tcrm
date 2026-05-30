@@ -1,0 +1,17 @@
+gbin/
+obj/
+.vs/
+.vscode/
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+*.user
+*.suo
+*.db
+*.sqlite
+.env
+
+# Ignore local appsettings files with secrets
+backend/Tcrm.Api/appsettings.Development.json
+backend/Tcrm.Api/appsettings.*.Local.json
