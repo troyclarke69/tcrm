@@ -15,7 +15,7 @@ export function ActivityManager({
 }: ActivityManagerProps) {
   return (
     <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-lg font-semibold text-slate-900">Activity Timeline</h2>
         <span className="text-sm text-slate-500">{activities.length} entries</span>
       </div>

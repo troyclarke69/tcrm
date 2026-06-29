@@ -35,7 +35,7 @@ export function DealsPage({
     : emptyDealFormValues;
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.95fr_1.35fr]">
+    <div className="grid gap-6 lg:grid-cols-[0.95fr_1.35fr] xl:grid-cols-[0.95fr_1.35fr]">
       <DealForm
         contacts={contacts}
         initialValues={initialValues}

@@ -98,12 +98,12 @@ export function ActivityForm({
         </select>
         <textarea className="min-h-28 rounded-2xl border border-slate-200 px-4 py-3 md:col-span-2" placeholder="Details" value={values.details} onChange={(e) => update("details", e.target.value)} />
       </div>
-      <div className="mt-4 flex gap-3">
-        <button className="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700" disabled={saving} type="submit">
+      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <button className="rounded-2xl w-full sm:w-auto bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700" disabled={saving} type="submit">
           {saving ? "Saving..." : submitLabel}
         </button>
         {onCancel ? (
-          <button className="rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50" type="button" onClick={onCancel}>
+          <button className="rounded-2xl w-full sm:w-auto border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50" type="button" onClick={onCancel}>
             Cancel
           </button>
         ) : null}

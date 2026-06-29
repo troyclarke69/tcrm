@@ -59,7 +59,7 @@ export function ActivitiesPage({
         </div>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[0.95fr_1.35fr]">
+      <div className="grid gap-6 lg:grid-cols-[0.95fr_1.35fr] xl:grid-cols-[0.95fr_1.35fr]">
         <ActivityForm
           contacts={contacts}
           users={users}

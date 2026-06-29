@@ -35,6 +35,7 @@ export default function App() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [selectedActivityFilter, setSelectedActivityFilter] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (!token) {
@@ -306,9 +307,19 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-transparent">
-      <Navbar email={email} onSignOut={handleSignOut} />
-      <div className="mx-auto grid max-w-7xl gap-6 px-6 py-6 lg:grid-cols-[260px_1fr]">
-        <Sidebar />
+      <Navbar email={email} onSignOut={handleSignOut} onMenuToggle={() => setIsSidebarOpen(true)} />
+      <div className="mx-auto grid max-w-7xl gap-6 px-6 py-6 lg:grid-cols-[224px_1fr]">
+        <div className="lg:hidden">
+          <div className={`fixed inset-y-0 left-0 z-40 w-[calc(100%-2rem)] max-w-xs transform border-r border-slate-200 bg-white p-4 shadow-soft transition duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            <Sidebar onClose={() => setIsSidebarOpen(false)} />
+          </div>
+          {isSidebarOpen ? (
+            <div className="fixed inset-0 z-30 bg-slate-900/40" onClick={() => setIsSidebarOpen(false)} />
+          ) : null}
+        </div>
+        <div className="hidden lg:block">
+          <Sidebar />
+        </div>
         <main className="space-y-6">
           <section className="rounded-3xl bg-brand-900 px-6 py-8 text-white shadow-soft">
             <p className="text-xs uppercase tracking-[0.3em] text-brand-200">Starter Kit</p>

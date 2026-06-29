@@ -1,9 +1,10 @@
 # TCRM Starter
 
 Starter CRM application using:
+C#, React/Typescript, Postgres
 
-
-## Structure
+## Startup (Docker)
+docker compose up --build
 
 
 ## Quick Start
@@ -14,12 +15,21 @@ Starter CRM application using:
    - ..\TCRM
    - `docker compose up -d db` -- starts pg instance
    - docker compose down - stops
+
 3. Run the API: ******* USE PowerShell *********
    - `cd backend/Tcrm.Api`
    - `dotnet restore`
-   - `dotnet ef database update` ** NOT NECESSARY / DOESN'T WORK 
-   --> $env:ASPNETCORE_URLS="http://localhost:8080" *must use PS
+   - `dotnet ef database update` ** NOT NECESSARY
+
+   * ************************************************************
+   * LOCAL -- 8080 -- IMPORTANT!!!
+   * -> $env:ASPNETCORE_URLS="http://localhost:8080" 
+   * must use PS
+   * will get 401 Unauth if testing on 8080 -- run frontend
+   * ************************************************************
+
    - `dotnet run`
+
 4. Run the frontend:
    - `cd frontend`
    - `npm install`
@@ -28,14 +38,14 @@ Starter CRM application using:
 ## Default Auth Flow
 
 
-## Notes
-
-
-# TESTING
+# TESTING *************IMPORTANT*****************************
 
 Testing backend ie. http://localhost:8080/api/contacts
-will result in 401 Unauthorized.
+****************** will result in 401 Unauthorized.
 ## Run frontend as to pass necessary JWT..
+
+# **********************************************************
+
 
 # DEPLOYMENT NOTES
 
@@ -122,3 +132,20 @@ Netlify (frontend):
 
 ---
 For more help, ask me to: run the app here, set up CI, or create a Fly/Netlify deployment pipeline.
+
+✅ Deployment Summary (Initial May 30 2026)
+
+Backend: https://tcrm-api-verdant-thunder-5995.fly.dev/ (Fly.io)
+Frontend: https://tecrm.netlify.app (Netlify)
+Database: Neon PostgreSQL
+GitHub: troyclarke69/tcrm (monorepo)
+✅ Working Features
+
+User registration & login with JWT tokens
+CORS properly configured
+All CRUD operations end-to-end
+Next optional steps:
+
+Add seeded demo users to backend (optional)
+Set DATABASE_URL as Fly secret for better security (currently using appsettings.json)
+Remove connection string from appsettings.json before next commit

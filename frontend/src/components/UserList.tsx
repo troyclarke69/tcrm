@@ -14,7 +14,7 @@ export function UserList({ users, selectedUserId, onSelectUser, onDeleteUser }: 
         <h2 className="text-lg font-semibold text-slate-900">Users</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full text-left text-sm">
+        <table className="min-w-full w-full text-left text-sm">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
               <th className="px-6 py-3">Name</th>
@@ -27,10 +27,10 @@ export function UserList({ users, selectedUserId, onSelectUser, onDeleteUser }: 
             {users.map((user) => (
               <tr key={user.id} className={`border-t border-slate-100 ${selectedUserId === user.id ? "bg-brand-50/60" : ""}`}>
                 <td className="px-6 py-4 font-medium text-slate-900">{user.firstName} {user.lastName}</td>
-                <td className="px-6 py-4 text-slate-600">{user.email}</td>
-                <td className="px-6 py-4 text-slate-600">{new Date(user.createdAtUtc).toLocaleDateString()}</td>
+                <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{user.email}</td>
+                <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{new Date(user.createdAtUtc).toLocaleDateString()}</td>
                 <td className="px-6 py-4">
-                  <div className="flex justify-end gap-2">
+                  <div className="flex flex-wrap justify-end gap-2">
                     <button className="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-50" onClick={() => onSelectUser(user)} type="button">
                       Edit
                     </button>

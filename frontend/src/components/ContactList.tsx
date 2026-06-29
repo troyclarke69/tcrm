@@ -19,7 +19,7 @@ export function ContactList({
         <h2 className="text-lg font-semibold text-slate-900">Contacts</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full text-left text-sm">
+        <table className="min-w-full w-full text-left text-sm">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
               <th className="px-6 py-3">Name</th>
@@ -39,12 +39,12 @@ export function ContactList({
                   <td className="px-6 py-4 font-medium text-slate-900">
                     {contact.firstName} {contact.lastName}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">{contact.company}</td>
-                  <td className="px-6 py-4 text-slate-600">{contact.email}</td>
-                  <td className="px-6 py-4 text-slate-600">{contact.dealCount ?? 0}</td>
-                  <td className="px-6 py-4 text-slate-600">{contact.activityCount ?? 0}</td>
+                  <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{contact.company}</td>
+                  <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{contact.email}</td>
+                  <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{contact.dealCount ?? 0}</td>
+                  <td className="px-6 py-4 text-slate-600 whitespace-normal break-words">{contact.activityCount ?? 0}</td>
                   <td className="px-6 py-4">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex flex-wrap justify-end gap-2">
                       <button className="rounded-xl border border-brand-200 px-3 py-2 text-xs font-semibold text-brand-700 transition hover:bg-brand-50" onClick={() => onSelectContact(contact)} type="button">
                         Manage
                       </button>

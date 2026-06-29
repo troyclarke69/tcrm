@@ -42,7 +42,7 @@ export function ContactsPage({
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-2">
         <ContactForm
           initialValues={initialValues}
           heading={selectedContact ? "Edit Contact" : "New Contact"}
